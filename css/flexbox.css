@@ -1,0 +1,183 @@
+/* cabecera*/
+.cabecera__container{
+    display: flex;
+    justify-content: space-between; /*para que el contenido se justifique segun el tipo de pantalla*/
+    align-items: center; /* elementos tienen espacio con borde de arriba */
+    position: fixed;  /* posición fijada al dar scroll*/
+    top: 0;    /*En que eje va a estar fijo */
+}
+
+.cabecera__buscar__item{
+    display: none;
+}
+
+/* Menu */
+.menu__container{
+    position: fixed; /* que este fijo al scrollear la pagina*/
+    bottom: 0%;  /* que se quede abajo*/
+    height: 75px; /* que su altura sea esa*/
+    width: 100%; /* que abarque todo el fondo*/
+}
+
+.menu__lista{
+    display: flex; /* elementos unos al lado del otro */
+    justify-content: space-around; /* le da espacio a los elementos entre todas las areas */
+    height: 100%;
+}
+
+.menu__lista li {
+    align-self: center; /* prop para hijos que alinea en el centro*/
+
+}
+
+.menu__itens{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.menu__lista:nth-child(2),
+.menu__lista:nth-child(3),
+.menu__lista:nth-child(4){
+    display: none;
+}
+
+/* Sección superior*/
+.superior__seccion__container{
+    display: flex; /* que se pongan uno al lado del otro*/
+    align-items: center; /* que se centren los títulos*/
+    white-space: nowrap; /* que no se dividan los nombres en dos líneas*/
+    overflow: scroll; /* que se corran todos los títulos para ver todo*/
+    gap: 15px; /* le va a estar dando un espacio a los elementos*/
+}
+
+/* para agrupar elementos usando todo el ancho del contenedor se usa justifiy-content*/
+
+
+/* */
+
+/* sección videos*/
+
+.videos__item{
+    height: 303px;
+    width: 280px;
+    flex-grow: 1;
+}
+
+.videos__container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1opx;
+}
+
+/* DESAFIO DESCRIPCIÓN DE LOS VIDEOS */ 
+
+ .descripcion-video {
+    margin-top: 1rem;
+    display: flex;
+    align-items: start; 
+    
+}
+
+.descripcion-video img {
+    margin-right: 1rem; 
+    flex-shrink: 0;  /*  Evita que la imagen se reduzca */
+    
+}
+
+.detalles__video {
+    flex-direction: column;
+    text-align:left;
+
+}
+
+.detalles__video h3{
+    margin-bottom: 10px;
+}
+
+
+/* rodapie*/
+.rodapie__container{
+    display: flex;
+    flex-flow: column wrap;
+
+    /* antes de flow estaba
+    flex-direction: column;
+    flex-wrap: wrap; */
+}
+
+@media (min-width:834px) {
+    
+    /* cabecera*/
+    .cabecera__buscar__item{
+        display: block;
+    }
+
+    /* rodapie*/
+    .rodapie__container{
+        justify-content: space-between;  /*que las columnas tengan espacios */
+    }
+}
+
+/* MENU LATERAL PARA PANTALLAS DE TABLETS */
+
+@media (min-width:834px){
+    .menu__container {
+        left: 0;
+        height: auto;
+        width: 74px;
+        top: 80px;
+    }
+    
+    .menu__lista {
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-top: 15px;
+        gap: 33px;
+    }
+    
+}
+    
+/* ella pone 1440px, pero mi compu como width tiene de 1020*/
+@media(min-width:1020px ){
+    .menu__container{
+        width: 239px;
+        overflow: scroll;
+    }
+
+    .menu__lista:nth-child(2),
+    .menu__lista:nth-child(3),
+    .menu__lista:nth-child(4){
+        display: flex;
+    }
+
+    .menu__lista{
+        height: auto;
+        padding: 20px 17px 20px 15px;
+        gap: 15px;
+    }
+
+    .menu__lista:nth-child(3){
+        flex-direction: column-reverse; /* estaba en orden invertido y se coloca alfab*/
+
+    }
+
+    .menu__itens{
+        flex-direction: row;
+        gap: 15px;
+        align-items: center;
+    }
+
+    .videojuegos{
+        order: 3; /*order sirve para enlistar los elementos en una posición dada */
+    }
+
+    .peliculas{
+        order: 2;
+    }
+
+    .premium{
+        order: 1;
+    }
+
+}
